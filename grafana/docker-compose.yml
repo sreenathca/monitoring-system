@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  grafana:
+    image: grafana/grafana-oss
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data:/var/lib/grafana
+      - ./grafana.log:/var/log/grafana/grafana.log
+    environment:
+      - GF_LOG_MODE=console file
